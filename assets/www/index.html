@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Acceleration Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", yash, false);
+
+    // Cordova is ready
+    //
+    var clk;
+    function start(){
+             clk=setInterval(function(){yash()},1000);
+             document.getElementById("status").innerHTML="Running";
+    }
+    function stop(){
+             clearInterval(clk);
+             document.getElementById("status").innerHTML="Stoped";
+    }
+    function yash(){
+             var d=new Date();
+             var t=d.toLocaleTimeString();
+             document.getElementById("p").innerHTML=t;
+    }
+
+    </script>
+  </head>
+  <body>
+    <h3><font face="Comic Sans MS">App written in HTML and JavaScript by Yash</h3>
+    <h5><p id="p">Time</p></h5>
+    <div id="status" style="color:red; font-size:18px; margin:0px;">Stoped</div>
+    <input type="Button" onclick="start()" value="Start" width="80%" height="100"><br>
+    <input type="Button" onclick="stop()" value="Stop" width="80%" height="100">
+  </body>
+</html>
+
